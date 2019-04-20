@@ -1,2 +1,1 @@
-# redux-counter
 # redux-todos
