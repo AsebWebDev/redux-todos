@@ -6,6 +6,8 @@ const initialState = {
 function rootReducer(state=initialState, action) {
   switch(action.type) {
     case 'ADD_TODO':
+      debugger
+      return state;
       // ADD A TODO
     case 'REMOVE_TODO':
       // REMOVE A TODO
@@ -24,5 +26,6 @@ $(document).ready(function () {
       type: "ADD_TODO",
       task: newTask
     })
+    $("form").trigger("reset");
   })
 });
