@@ -4,10 +4,14 @@ const initialState = {
 }
 
 function rootReducer(state=initialState, action) {
+  let newState = { ...state };  
   switch(action.type) {
     case 'ADD_TODO':
-      debugger
-      return state;
+      newState.id++;
+      return {
+        ...newState,
+        todos: [...newState.todos, {task: action.task, id: newState.id}]
+      };
       // ADD A TODO
     case 'REMOVE_TODO':
       // REMOVE A TODO
