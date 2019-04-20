@@ -22,7 +22,11 @@ function rootReducer(state=initialState, action) {
   
 }
 
-const store = Redux.createStore(rootReducer);
+const store = Redux.createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 $("ul").on("click", "button", function(e) {
   store.dispatch({
     type: "REMOVE_TODO",
